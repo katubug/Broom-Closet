@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "neoforge:conditions": [
+      { "type": "neoforge:item_exists", "item": "broom_closet:elf_ears" }
+    ],
+    "category": "equipment",
+    "key": {
+      "A": { "item": "minecraft:pink_wool" },
+      "B": { "item": "minecraft:string" }
+    },
+    "pattern": ["A A", "BBB"],
+    "result": { "id": "broom_closet:elf_ears" }
+}

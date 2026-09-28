@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "heykatu.broom_closet.mixin.ftbchunks",
+  "plugin": "heykatu.broom_closet.mixin.FTBChunksMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "client": [
+    "LargeMapScreenMixin",
+    "FTBChunksClientMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

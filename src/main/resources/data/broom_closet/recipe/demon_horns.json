@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "neoforge:conditions": [
+      { "type": "neoforge:item_exists", "item": "broom_closet:demon_horns" }
+    ],
+    "category": "equipment",
+    "key": {
+      "A": { "item": "minecraft:stick" },
+      "B": { "item": "minecraft:nether_brick" }
+    },
+    "pattern": ["A A", "B B"],
+    "result": { "id": "broom_closet:demon_horns" }
+}

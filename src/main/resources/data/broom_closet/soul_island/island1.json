@@ -1,0 +1,7 @@
+{
+  "structure": "broom_closet:cozy_cove",
+  "screenshot": "broom_closet:textures/gui/soul_island/island1.png",
+  "name": {"translate": "soul_island.broom_closet.island1.name"},
+  "description": {"translate": "soul_island.broom_closet.island1.desc"},
+  "order": 1
+}

@@ -1,0 +1,10 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "soulhome"
+    }
+  ],
+  "type": "broom_closet:soulhome_precipitation",
+  "biomes": "soulhome:soulhome"
+}

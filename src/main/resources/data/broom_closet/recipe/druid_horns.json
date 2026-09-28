@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "neoforge:conditions": [
+      { "type": "neoforge:item_exists", "item": "broom_closet:druid_horns" }
+    ],
+    "category": "equipment",
+    "key": {
+      "A": { "item": "minecraft:stick" },
+      "B": { "item": "minecraft:leather" }
+    },
+    "pattern": ["A A", "B B"],
+    "result": { "id": "broom_closet:druid_horns" }
+}

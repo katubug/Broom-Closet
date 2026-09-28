@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "neoforge:conditions": [
+      { "type": "neoforge:item_exists", "item": "broom_closet:frog" }
+    ],
+    "category": "equipment",
+    "key": {
+      "A": { "item": "minecraft:slime_ball" },
+      "B": { "item": "minecraft:tadpole_bucket" }
+    },
+    "pattern": ["A", "B"],
+    "result": { "id": "broom_closet:frog" }
+}

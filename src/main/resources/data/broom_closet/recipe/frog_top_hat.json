@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "neoforge:conditions": [
+      { "type": "neoforge:item_exists", "item": "broom_closet:frog_top_hat" }
+    ],
+    "category": "equipment",
+    "key": {
+      "A": { "item": "minecraft:black_wool" },
+      "B": { "item": "broom_closet:frog" }
+    },
+    "pattern": [" A ", "ABA", "AAA"],
+    "result": { "id": "broom_closet:frog_top_hat" }
+}

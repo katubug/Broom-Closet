@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "neoforge:conditions": [
+        { "type": "neoforge:item_exists", "item": "broom_closet:antlers" }
+    ],
+    "category": "equipment",
+    "key": {
+        "P": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "pattern": [
+        "P P",
+        "P P",
+        " P "
+    ],
+    "result": {
+        "count": 1,
+        "id": "broom_closet:antlers"
+    }
+}

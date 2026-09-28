@@ -1,0 +1,7 @@
+{
+  "structure": "soulhome:soul_island0",
+  "screenshot": "broom_closet:textures/gui/soul_island/island0.png",
+  "name": {"translate": "soul_island.broom_closet.island0.name"},
+  "description": {"translate": "soul_island.broom_closet.island0.desc"},
+  "order": 0
+}

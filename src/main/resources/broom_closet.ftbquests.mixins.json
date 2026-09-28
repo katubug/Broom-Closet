@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "heykatu.broom_closet.mixin.ftbquests",
+  "plugin": "heykatu.broom_closet.mixin.FTBQuestsMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "client": [
+    "QuestButtonMixin",
+    "ViewQuestPanelMixin",
+    "ChapterPanelMixin",
+    "ThemeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
