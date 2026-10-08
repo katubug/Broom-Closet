@@ -10,7 +10,7 @@ import net.neoforged.neoforge.client.event.RegisterDimensionSpecialEffectsEvent;
 
 // Replaces SoulHome's registered DimensionSpecialEffects with ours, so thunderstorms can dim the
 // soul home
-@EventBusSubscriber(modid = BroomCloset.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = BroomCloset.MODID, value = Dist.CLIENT)
 public final class SoulHomeClientEffects {
     private SoulHomeClientEffects() {}
 

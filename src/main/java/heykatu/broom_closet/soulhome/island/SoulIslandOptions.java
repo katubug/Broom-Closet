@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 // Loads the picker's island list from data/<ns>/soul_island/*.json. Reloads with /reload.
-@EventBusSubscriber(modid = BroomCloset.MODID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = BroomCloset.MODID)
 public final class SoulIslandOptions extends SimpleJsonResourceReloadListener {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final Gson GSON = new GsonBuilder().create();

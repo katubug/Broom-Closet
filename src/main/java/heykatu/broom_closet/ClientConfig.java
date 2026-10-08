@@ -10,8 +10,8 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import java.util.List;
 import java.util.regex.Pattern;
 
-// Client-only: home for settings client/cosmetic settings. TODO: figure out what to replace "bus" with
-@EventBusSubscriber(modid = BroomCloset.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+// Client-only: home for settings client/cosmetic settings.
+@EventBusSubscriber(modid = BroomCloset.MODID, value = Dist.CLIENT)
 public class ClientConfig {
     private static final Pattern CODE_REMAP_PATTERN = Pattern.compile("^[A-Za-z0-9]:#[0-9A-Fa-f]{6}$");
 
@@ -106,7 +106,7 @@ public class ClientConfig {
             "will potentially cause issues!",
             "Changes to this list *only* take effect after a *full client restart* (quitting and relaunching).",
             "Requires FTB Quests."
-    ).defineListAllowEmpty("codeRemaps", DEFAULT_CODE_REMAPS, ClientConfig::validateCodeRemap);
+    ).defineListAllowEmpty("codeRemaps", DEFAULT_CODE_REMAPS, () -> "g:#FFFFFF", ClientConfig::validateCodeRemap);
 
     private static final ModConfigSpec.BooleanValue SOULHOME_STORM_DARKENING = BUILDER.comment(
             "Whether thunderstorms visibly dim SoulHome's soul home dimensions. Requires a client restart.",

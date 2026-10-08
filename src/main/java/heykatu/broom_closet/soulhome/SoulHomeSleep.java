@@ -21,7 +21,7 @@ import java.util.List;
 
 // Makes sleeping in a soul home actually pass the night. Allows sleepers in the SoulHome to pass the overworld's
 // night as well, assuming the sleep percentage gamerule would allow for it
-@EventBusSubscriber(modid = BroomCloset.MODID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = BroomCloset.MODID)
 public final class SoulHomeSleep {
     private SoulHomeSleep() {}
 

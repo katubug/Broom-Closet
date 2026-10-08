@@ -1,24 +1,32 @@
 package heykatu.broom_closet.wearables.client;
 
 import heykatu.broom_closet.BroomCloset;
+import heykatu.broom_closet.wearables.WearableItems;
 import heykatu.broom_closet.wearables.Wearables;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
-@EventBusSubscriber(modid = BroomCloset.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = BroomCloset.MODID, value = Dist.CLIENT)
 public class WearablesClient {
 
     private static final HatModelCache CACHE = new HatModelCache();
@@ -38,6 +46,29 @@ public class WearablesClient {
     @SubscribeEvent
     public static void registerReloadListeners(RegisterClientReloadListenersEvent event) {
         event.registerReloadListener(CACHE);
+    }
+
+    @SubscribeEvent
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        event.registerItem(new IClientItemExtensions() {
+            @Override
+            public @Nullable HumanoidModel<?> getGenericArmorModel(LivingEntity entity, ItemStack stack, EquipmentSlot slot, HumanoidModel<?> original) {
+                if (slot == EquipmentSlot.HEAD) {
+                    var model = getHatModel(stack.getItem());
+                    model.updateParent(original);
+                    return model;
+                }
+                return original;
+            }
+        },
+                WearableItems.CAT_EARS.get(),
+                WearableItems.DEMON_HORNS.get(),
+                WearableItems.DRUID_HORNS.get(),
+                WearableItems.ELF_EARS.get(),
+                WearableItems.FROG.get(),
+                WearableItems.FROG_TOP_HAT.get(),
+                WearableItems.GOBLIN_EARS.get(),
+                WearableItems.ANTLERS.get());
     }
 
     public static HatModel getHatModel(Item item) {

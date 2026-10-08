@@ -29,7 +29,7 @@ import java.util.UUID;
 
 // Stops a player's first soul key use and shows the island picker instead, so the island gets
 // built from their pick rather than from SoulHome's UUID roll. See DimensionRegistryMixin.
-@EventBusSubscriber(modid = BroomCloset.MODID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = BroomCloset.MODID)
 public final class SoulKeyInterceptor {
     private static final ResourceLocation SOUL_KEY = ResourceLocation.fromNamespaceAndPath(SoulHomeCompat.MODID, "soulkey");
     private static final ResourceLocation PERSONAL_SOUL_KEY = ResourceLocation.fromNamespaceAndPath(SoulHomeCompat.MODID, "personal_soulkey");
