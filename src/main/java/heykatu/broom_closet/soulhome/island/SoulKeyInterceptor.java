@@ -1,6 +1,7 @@
 package heykatu.broom_closet.soulhome.island;
 
 import heykatu.broom_closet.BroomCloset;
+import heykatu.broom_closet.Config;
 import heykatu.broom_closet.network.OpenSoulIslandPickerPayload;
 import heykatu.broom_closet.soulhome.SoulHomeCompat;
 import net.minecraft.core.component.DataComponents;
@@ -38,6 +39,8 @@ public final class SoulKeyInterceptor {
 
     @SubscribeEvent
     public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
+        // off = plain SoulHome, old picks still apply via the mixin
+        if (!Config.soulhomeIslandPicker) return;
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
         ItemStack stack = event.getItemStack();
         if (!isSoulKey(stack)) return;

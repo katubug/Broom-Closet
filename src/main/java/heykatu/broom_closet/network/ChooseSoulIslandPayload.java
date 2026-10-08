@@ -1,6 +1,7 @@
 package heykatu.broom_closet.network;
 
 import heykatu.broom_closet.BroomCloset;
+import heykatu.broom_closet.Config;
 import heykatu.broom_closet.soulhome.SoulHomeCompat;
 import heykatu.broom_closet.soulhome.island.SoulIslandChoices;
 import heykatu.broom_closet.soulhome.island.SoulIslandOption;
@@ -36,13 +37,14 @@ public record ChooseSoulIslandPayload(ResourceLocation optionId, InteractionHand
     // Everything is re-checked here: the screen may be stale
     static void handle(ChooseSoulIslandPayload payload, IPayloadContext context) {
         if (!(context.player() instanceof ServerPlayer player)) return;
+        if (!Config.soulhomeIslandPicker) return; // got turned off while the screen was open
 
         SoulIslandOption option = SoulIslandOptions.get(payload.optionId());
         if (option == null) return;
 
         UUID self = player.getUUID();
         if (!SoulKeyInterceptor.needsPick(player.server, self)) return;
-        SoulIslandChoices.get(player.server).set(self, option.structure());
+        SoulIslandChoices.get(player.server).set(self, option.structure(), option.spawn().orElse(null));
 
         // Run the key's own finish-use, which is how SoulHome teleports.
         // just in case the key's gone from that hand, the pick is saved and they just use it again.

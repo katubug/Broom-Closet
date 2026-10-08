@@ -36,11 +36,17 @@ public class Config {
             "Doesn't require SoulHome or Midnight Thoughts.s"
     ).define("soulhomeResetPhantomTimer", true);
 
+    private static final ModConfigSpec.BooleanValue SOULHOME_ISLAND_PICKER = BUILDER.comment(
+            "Whether a player's first soul key use opens the island picker instead of SoulHome's random island.",
+            "Requires SoulHome."
+    ).define("soulhomeIslandPicker", true);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean soulhomeWeather;
     public static boolean soulhomeSleep;
     public static boolean soulhomeResetPhantomTimer;
+    public static boolean soulhomeIslandPicker;
 
     private static boolean validateItemName(final Object obj) {
         return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));
@@ -56,5 +62,6 @@ public class Config {
         soulhomeWeather = SOULHOME_WEATHER.get();
         soulhomeSleep = SOULHOME_SLEEP.get();
         soulhomeResetPhantomTimer = SOULHOME_RESET_PHANTOM_TIMER.get();
+        soulhomeIslandPicker = SOULHOME_ISLAND_PICKER.get();
     }
 }

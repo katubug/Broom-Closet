@@ -1,6 +1,6 @@
 {
-  "structure": "soulhome:soul_island0",
-  "screenshot": "broom_closet:textures/gui/soul_island/island2.png",
+  "structure": "broom_closet:warped_isle",
+  "screenshot": "broom_closet:textures/gui/soul_island/warped_isle.png",
   "name": {"translate": "soul_island.broom_closet.island2.name"},
   "description": {"translate": "soul_island.broom_closet.island2.desc"},
   "order": 2

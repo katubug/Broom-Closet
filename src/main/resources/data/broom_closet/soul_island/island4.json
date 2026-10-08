@@ -1,4 +1,5 @@
 {
+  "enabled": false,
   "structure": "soulhome:soul_island0",
   "screenshot": "broom_closet:textures/gui/soul_island/island4.png",
   "name": {"translate": "soul_island.broom_closet.island4.name"},

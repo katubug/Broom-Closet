@@ -5,6 +5,7 @@
   "plugin": "heykatu.broom_closet.mixin.SoulHomeMixinPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "DimensionHelperMixin",
     "DimensionRegistryMixin"
   ],
   "client": [
